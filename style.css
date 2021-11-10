@@ -1,0 +1,125 @@
+body{
+   background-color: rgba(219, 81, 30, 100);
+  
+   
+}
+.weather{
+    border : 1px solid grey;
+    width: 50vw;
+    margin: auto;
+    background-color: white;
+    margin-top: 0px;
+    
+    
+
+}
+.title{
+    display: flex;
+   border-bottom: 1px solid black;
+
+}
+
+.buttonReturn > button {
+  padding : 20px;
+border : none;
+background-color: white;
+
+}
+h1{
+    width: 100%;
+    text-align: center;
+    margin-left: 100%;
+    margin-right: 100%;
+}
+.header-weather{
+    font-size : 30px;
+    text-align: center;
+    padding : 20px;
+   
+    
+}
+
+.main-weather{
+    display: flex;
+    justify-content: space-around;
+ 
+}
+
+.weather-left > img {
+    width : 20vw;
+    height: 20vh;
+   padding-top: 20px;
+   padding-bottom: 20px;
+    
+}
+
+
+.weather-right{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width : 20vw;
+    height: 20vh;
+  
+}
+.temperature{
+    font-size : 80px;
+}
+.temps{
+    font-size : 40px;
+}
+.footer-weather{
+    display : flex;
+    justify-content: space-around;
+}
+
+.footer-weather-left{
+display : flex;
+
+}
+
+.footer-weather-right{
+    display : flex;
+  
+}
+.img-footer {
+    width : 70px;
+    height: 70px;
+}
+.footer-weather{
+    border-top: 1px solid black;
+    padding: 20px;
+}
+
+.weather-question{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 20vh;
+    margin-left : 40vh;
+    margin-right: 40vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+.weather-question> input{
+ width : 50vw;
+ height : 5vh;
+}
+
+.weather-question> button{
+    width : 8vw;
+    height : 6vh;
+    background-color: rgba(219, 81, 30, 100);
+    border: 1px solid rgba(219, 81, 30, 100);
+    color: white;
+
+   }
+
+   .humidity{
+       font-size: 18px;
+       font-weight: bold;
+       padding: 3px;
+   }

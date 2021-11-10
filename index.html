@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="weather-question">
+<input id="city" placeholder="Enter the name of your city"> </input>
+<button onClick="getData()">Confirm</button>
+
+</div>
+
+<div class="weather" style="visibility: hidden;"  >
+
+    <div class="title">
+        <div class="buttonReturn">
+     
+            <button  class="btn" onclick="hideResult()"> <i class="fa fa-close  fa-10x"></i> </button>
+        </div>
+        <div class="headingone">
+            <h1>Weather App</h1>
+        </div>
+    </div>
+    <div class="header-weather" id="header-weather">
+      
+    </div>
+
+    <div class="main-weather">
+        <div class="weather-left" id="weather-left"  >
+            <img src="" />
+        </div>
+
+        <div class="weather-right">
+              <div class="temperature" id="temperature"></div>  
+              <div class="temps" id="temps"></div>  
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="footer-weather">
+        <div class="footer-weather-left">
+                <div><img class="img-footer" src="data:image/png;base64,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" /></div>
+                <div>
+                <div class="humidity">Humidity</div>
+                <div class="humidity" id="humidity"></div>
+            </div>
+        </div>
+
+        <div class="footer-weather-right">
+                 <div><img class="img-footer" src="https://st2.depositphotos.com/4520249/7571/v/950/depositphotos_75718829-stock-illustration-blowing-wind-icon.jpg" /></div>
+                <div>
+                <div class="humidity">Wind</div>
+                <div class="humidity" id="wind"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script>
+  
+ 
+function hideResult() {
+    const result = document.querySelector('.weather')
+
+
+//result.style.display = 'none'; 
+result.style.visibility = 'hidden';
+
+const question = document.querySelector('.weather-question')
+
+
+
+question.style.visibility = 'visible'; 
+}
+
+  async function getData(){
+    var city = document.getElementById("city").value;
+    console.log(city);
+
+  /*  const response = await fetch(
+     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0dcaca66cd4b71e0c029e4ebd582aa6d`
+   ).then(response => console.log(response.json()));
+   */
+
+   const response = await fetch(
+     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=0dcaca66cd4b71e0c029e4ebd582aa6d`
+   ).then(response => response.json()).then(result => WeatherDetails(result));
+ 
+const question = document.querySelector('.weather-question')
+
+question.style.visibility = 'hidden';
+
+
+const result = document.querySelector('.weather')
+
+
+//result.style.display = 'block'; 
+
+result.style.visibility = 'visible'; 
+
+  }
+
+  function WeatherDetails(info){
+
+    
+      console.log(info.main.temp);
+
+
+
+      const city = info.name;
+      const country = info.sys.country
+      const temps = info.weather[0].main;
+      const temperature = info.main.temp;
+      const humidity = info.main.humidity;
+      const id = info.weather[0].id;
+      const wind = (info.wind.speed *3600)/1000;
+
+
+
+      console.log(wind + "KM/H");
+     // document.querySelector('header-weather').innerHTML= "hello";
+      document.getElementById('header-weather').innerHTML = `${city}, ${country}`;
+      document.getElementById('temps').innerHTML = `${temps}`;
+
+      document.getElementById('humidity').innerHTML = `${humidity}%`;
+      document.getElementById('wind').innerHTML = `${wind}%`;
+      const temperatureWithoutComma =  (Math.round(temperature * 100) / 100).toFixed(0)
+      console.log(temperatureWithoutComma)
+      document.getElementById('temperature').innerHTML = `${temperatureWithoutComma}°C`
+
+     const wIcon = document.querySelector("img")
+
+     if(id == 800){
+            wIcon.src = "./icons/clear.svg";
+        }else if(id >= 200 && id <= 232){
+            wIcon.src = "./icons/storm.svg";  
+        }else if(id >= 600 && id <= 622){
+            wIcon.src = "./icons/snow.svg";
+        }else if(id >= 701 && id <= 781){
+            wIcon.src = "./icons/haze.svg";
+        }else if(id >= 801 && id <= 804){
+            wIcon.src = "./icons/cloud.svg";
+        }else if((id >= 500 && id <= 531) || (id >= 300 && id <= 321)){
+            wIcon.src = "./icons/rain.svg";
+        }
+        
+  }
+
+
+</script>
+
+</html>
